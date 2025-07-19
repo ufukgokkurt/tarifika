@@ -11,6 +11,7 @@ import Category from './src/pages/Category';
 import { StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import ProductList from './src/pages/ProductList';
+import ProductDetail from './src/pages/ProductDetail';
 
 const Stack = createNativeStackNavigator();
 function App() {
@@ -23,6 +24,7 @@ function App() {
           >
             <Stack.Screen name="Categories" component={Category} />
             <Stack.Screen name="Meals" component={ProductList} />
+            <Stack.Screen name="Details" component={ProductDetail}  />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>

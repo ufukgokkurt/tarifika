@@ -1,19 +1,21 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { MealType } from '../Types';
+import { useNavigation } from '@react-navigation/native';
 
 interface MealItemProps {
   meal: MealType;
 }
 export default function MealItem({ meal }: MealItemProps) {
+       const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Details', { mealId: meal.idMeal })}  >
       <Image
         source={{ uri: meal.strMealThumb }}
         style={styles.image}
       />
      <View style={styles.titleContainer}> <Text style={styles.title}>{meal.strMeal}</Text></View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

@@ -13,8 +13,7 @@ const [meals, setMeals] = useState([]);
   const fetchMeals = () => {
     axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=' + categoryName)
       .then((response) => {
-        console.log(response.data.meals);
-        setMeals(response.data.meals);
+         setMeals(response.data.meals);
         setLoading(false);
       })
       .catch((error) => {
